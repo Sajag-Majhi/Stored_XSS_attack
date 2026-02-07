@@ -1,0 +1,15 @@
+<h2>Comments</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <textarea name="comment"></textarea><br>
+  <button>Post</button>
+</form>
+
+<hr>
+
+{% for c in comments %}
+  <div class="comment">
+    {{ c.text|safe }}
+  </div>
+{% endfor %}
